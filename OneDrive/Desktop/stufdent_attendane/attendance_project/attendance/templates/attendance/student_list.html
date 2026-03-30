@@ -1,0 +1,41 @@
+{% extends "attendance/base.html" %}
+
+{% block title %}All Records{% endblock %}
+
+{% block content %}
+<h1 style="margin-bottom:1rem;">Attendance Records</h1>
+<a href="{% url 'student_create' %}" class="btn btn-primary" style="margin-bottom:1rem; display:inline-block;">+ Add Record</a>
+
+{% if students %}
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Student ID</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.student_id }}</td>
+            <td>{{ student.date }}</td>
+            <td>{% if student.is_present %}Present{% else %}Absent{% endif %}</td>
+            <td>
+                <a href="{% url 'student_detail' student.pk %}" class="btn btn-secondary">View</a>
+                <a href="{% url 'student_update' student.pk %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'student_delete' student.pk %}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No records yet. <a href="{% url 'student_create' %}">Add the first one.</a></p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "attendance/base.html" %}
+
+{% block title %}{{ student.name }}{% endblock %}
+
+{% block content %}
+<h1 style="margin-bottom:1rem;">Student Detail</h1>
+<div class="card">
+    <p><strong>Name:</strong> {{ student.name }}</p>
+    <p><strong>Student ID:</strong> {{ student.student_id }}</p>
+    <p><strong>Date:</strong> {{ student.date }}</p>
+    <p><strong>Status:</strong> {% if student.is_present %}Present{% else %}Absent{% endif %}</p>
+    <div style="margin-top:1.5rem;">
+        <a href="{% url 'student_list' %}" class="btn btn-secondary">Back</a>
+        <a href="{% url 'student_update' student.pk %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'student_delete' student.pk %}" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+{% endblock %}

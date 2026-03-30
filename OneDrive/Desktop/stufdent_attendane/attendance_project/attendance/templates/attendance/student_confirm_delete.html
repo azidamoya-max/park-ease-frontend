@@ -1,0 +1,24 @@
+{% extends "attendance/base.html" %}
+
+{% block title %}{{ action }}{% endblock %}
+
+{% block content %}
+<h1 style="margin-bottom:1rem;">{{ action }}</h1>
+<div class="card">
+    <form method="post">
+        {% csrf_token %}
+        <label>Student Name</label>
+        {{ form.name }}
+        <label>Student ID</label>
+        {{ form.student_id }}
+        <label>Date</label>
+        {{ form.date }}
+        <label>Present?</label>
+        {{ form.is_present }}
+        <div style="margin-top:1.5rem;">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="{% url 'student_list' %}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
