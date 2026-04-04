@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PARKEASE | Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#D4A017",
+                    "accent": "#1B4332",
+                    "background": "#F8F9FA",
+                    "surface": "#FFFFFF",
+                    "on-surface": "#1B4332",
+                    "on-surface-variant": "#4A5D53",
+                    "outline": "#D1D5DB",
+                    "outline-variant": "#E5E7EB",
+                    "error": "#BA1A1A"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .amber-gradient {
+            background: linear-gradient(135deg, #D4A017 0%, #B88A14 100%);
+        }
+    </style>
+</head>
+<body class="bg-[#F8F9FA] font-body text-accent antialiased min-h-screen flex flex-col">
+<!-- TopAppBar Shell -->
+<header class="flex justify-between items-center w-full px-6 py-8">
+<div class="flex items-center gap-4">
+<!-- Brand Logo Anchor -->
+<span class="text-xl font-black tracking-[0.05em] text-accent font-headline">PARKEASE</span>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-accent text-2xl" data-icon="menu">menu</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-8 pb-12">
+<div class="w-full max-w-sm">
+<!-- Editorial Image / Visual Anchor -->
+<div class="mb-12 overflow-hidden rounded-xl aspect-[4/5] relative group">
+<img alt="Luxury car in architectural parking" class="w-full h-full object-cover brightness-90 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_DRfIhQYzL4b6I0vjQrWJ8GqFw72zGGcbowKHUAZG8_2oUw6eM0GPnLb6_SRNeYquOBCjKec8U6VQATPQmWJAA8UIT1PvzCpIsEK3vNt_5ql8CMYh4gyylE_reL8JRktO4DCkMt1-6AKr5iKEvert0cyy_magZaIszT5e-BHvmQQeYd9k31SWoa0_asv6XAC9sOZuYOpqPndmD3Kwa-Zry-HvvHenjmSAq4hzzDXHgvjjBpd4CMSAzK7rH2OOdS-rSrM1Nv-LRpGz"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1B4332]/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="font-headline font-extrabold text-2xl text-white tracking-tight leading-tight">Welcome to the<br/>Architectural Concierge.</p>
+</div>
+</div>
+<!-- Login Form -->
+<form class="space-y-8">
+<div class="space-y-6">
+<!-- Username Input -->
+<div class="relative group">
+<label class="block font-label text-[10px] font-semibold tracking-widest text-on-surface-variant uppercase mb-1" for="username">Username</label>
+<input class="w-full bg-transparent border-0 border-b border-outline py-2 px-0 focus:ring-0 focus:border-primary transition-colors text-accent placeholder:text-on-surface-variant/40 font-body text-sm" id="username" name="username" placeholder="e.g. concierge@parkease.com" type="text"/>
+</div>
+<!-- Password Input -->
+<div class="relative group">
+<label class="block font-label text-[10px] font-semibold tracking-widest text-on-surface-variant uppercase mb-1" for="password">Password</label>
+<input class="w-full bg-transparent border-0 border-b border-outline py-2 px-0 focus:ring-0 focus:border-primary transition-colors text-accent placeholder:text-on-surface-variant/40 font-body text-sm" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="pt-4 flex flex-col items-center gap-6">
+<!-- Primary Action -->
+<button class="w-full amber-gradient text-white font-headline font-bold text-sm tracking-[0.1em] py-4 rounded-lg shadow-lg active:scale-[0.98] transition-all duration-200" type="submit">
+                        SIGN IN
+                    </button>
+<!-- Secondary/Tertiary links -->
+<div class="flex flex-col items-center gap-4">
+<a class="text-accent text-[11px] font-semibold tracking-wide hover:underline decoration-1 underline-offset-4" href="#">
+                            Forgot your credentials?
+                        </a>
+<div class="flex items-center gap-2">
+<span class="h-[1px] w-4 bg-outline"></span>
+<span class="text-on-surface-variant text-[10px] tracking-widest uppercase">or request access</span>
+<span class="h-[1px] w-4 bg-outline"></span>
+</div>
+</div>
+</div>
+</form>
+</div>
+</main>
+<!-- Aesthetic Footer Note -->
+<footer class="py-10 px-8 flex flex-col items-center text-center">
+<p class="font-label text-[9px] tracking-[0.2em] text-on-surface-variant uppercase max-w-[220px] leading-relaxed">
+            Curated parking management for the modern architectural landscape.
+        </p>
+<div class="mt-6 flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="language">language</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="shield">shield</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="help_outline">help_outline</span>
+</div>
+</footer>
+</body></html>

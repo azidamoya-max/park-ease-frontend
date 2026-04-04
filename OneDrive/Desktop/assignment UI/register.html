@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vehicle Registration | ParkEase</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "primary": "#1B4332", // Deep forest green
+              "secondary": "#D4A017", // Warm amber
+              "background": "#F8F9FA", // Soft white
+              "surface": "#FFFFFF", // Clean white cards
+              "on-surface": "#1A1C1B",
+              "on-surface-variant": "#404944",
+              "outline": "#707973",
+              "outline-variant": "#BFC9C2"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.125rem",
+              "lg": "0.25rem",
+              "xl": "0.5rem",
+              "full": "0.75rem"
+            },
+            "fontFamily": {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #F8F9FA;
+        font-family: 'Manrope', sans-serif;
+      }
+      .glass-nav {
+        backdrop-filter: blur(32px);
+        background-color: rgba(248, 249, 250, 0.8);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FA] flex justify-between items-center px-8 py-4 w-full border-b border-outline-variant/10">
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<h1 class="font-headline font-extrabold text-2xl text-primary tracking-tight">ParkEase</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/5 overflow-hidden border border-primary/10">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a high-end concierge in a tailored suit with a sophisticated neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmd7ahNmQee4EsN1NTnrRINJjfbanFD3xGVar4rZVK-j6rQJ9dV9Ggyk6VtdskQ-rryg5GyFD7c3XtAnZeTvfz1zFl-PfH0pi_dUM7-Sy4c0P9WpVryJ4EIwgdbazIPYb0xkOfRWfwcp5ppJhhnCtTFM5S5JG64BMWTzYN-flAZUPW_UvOyrMOWB3WL9ed3U4_4kgad0toX-EaSuv-FDnaiDi8hIOGL5AAQRflb2XcP9l0YvrrKo0lt6aPU6YQxP8IZfrTV4MxI-iB"/>
+</div>
+</div>
+</header>
+<!-- NavigationDrawer (Sidebar) -->
+<aside class="fixed left-0 top-0 h-screen w-72 flex flex-col py-6 bg-primary text-white pt-24 hidden md:flex">
+<div class="px-8 mb-10">
+<h2 class="font-headline font-black uppercase tracking-tighter text-lg text-secondary">Architectural Concierge</h2>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 text-white/70 px-8 py-3 mx-2 hover:bg-white/10 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium tracking-wide uppercase">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 bg-secondary text-primary rounded px-8 py-3 mx-2 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">app_registration</span>
+<span class="text-sm font-bold tracking-wide uppercase">Registration</span>
+</a>
+<a class="flex items-center gap-4 text-white/70 px-8 py-3 mx-2 hover:bg-white/10 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium tracking-wide uppercase">Reports</span>
+</a>
+<div class="mt-auto">
+<a class="flex items-center gap-4 text-white/70 px-8 py-3 mx-2 hover:bg-white/10 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium tracking-wide uppercase">Sign-out</span>
+</a>
+</div>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="pt-24 pb-24 px-6 md:ml-72 md:px-16 lg:px-24 bg-[#F8F9FA]">
+<div class="max-w-5xl mx-auto">
+<!-- Hero Header -->
+<section class="mb-16">
+<span class="font-label text-xs font-bold tracking-[0.2em] text-secondary uppercase mb-4 block">Vehicle Management</span>
+<h2 class="font-headline text-5xl font-bold text-primary tracking-tight mb-6">Registration</h2>
+<p class="font-body text-on-surface-variant max-w-xl text-lg leading-relaxed">
+                    Enroll a new vehicle into the ParkEase ecosystem. Our system ensures architectural precision in inventory management and security.
+                </p>
+</section>
+<!-- Registration Form Canvas -->
+<form class="space-y-12">
+<!-- Section 1: Driver Identity -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-4">
+<h3 class="font-headline text-2xl font-bold text-primary mb-2">Driver Identity</h3>
+<p class="text-sm text-on-surface-variant">Primary credentials for the vehicle operator.</p>
+</div>
+<div class="lg:col-span-8 bg-white p-8 rounded shadow-sm space-y-8 border border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group">
+<label class="font-label text-[10px] font-bold uppercase tracking-widest text-primary/60 mb-1 block">Driver Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 font-body text-on-surface placeholder:text-outline-variant/60 transition-all" placeholder="e.g. Julian Sterling" type="text"/>
+</div>
+<div class="group">
+<label class="font-label text-[10px] font-bold uppercase tracking-widest text-primary/60 mb-1 block">Phone Number</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 font-body text-on-surface placeholder:text-outline-variant/60 transition-all" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="group">
+<label class="font-label text-[10px] font-bold uppercase tracking-widest text-primary/60 mb-1 block">NIN Number</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 font-body text-on-surface placeholder:text-outline-variant/60 transition-all" placeholder="National Identification Number" type="text"/>
+</div>
+</div>
+</div>
+<!-- Section 2: Vehicle Details -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-4">
+<h3 class="font-headline text-2xl font-bold text-primary mb-2">Vehicle Details</h3>
+<p class="text-sm text-on-surface-variant">Technical specifications and visual markers.</p>
+</div>
+<div class="lg:col-span-8 bg-white p-8 rounded shadow-sm space-y-8 border border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group">
+<label class="font-label text-[10px] font-bold uppercase tracking-widest text-primary/60 mb-1 block">Vehicle Type</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 font-body text-on-surface appearance-none cursor-pointer">
+<option>Sedan</option>
+<option>SUV</option>
+<option>Truck</option>
+<option>Motorcycle</option>
+</select>
+</div>
+<div class="group">
+<label class="font-label text-[10px] font-bold uppercase tracking-widest text-primary/60 mb-1 block">Number Plate</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 font-body text-on-surface placeholder:text-outline-variant/60 transition-all" placeholder="ABC-1234" type="text"/>
+</div>
+<div class="group">
+<label class="font-label text-[10px] font-bold uppercase tracking-widest text-primary/60 mb-1 block">Vehicle Model</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 font-body text-on-surface placeholder:text-outline-variant/60 transition-all" placeholder="e.g. Tesla Model S" type="text"/>
+</div>
+<div class="group">
+<label class="font-label text-[10px] font-bold uppercase tracking-widest text-primary/60 mb-1 block">Vehicle Color</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary py-2 font-body text-on-surface placeholder:text-outline-variant/60 transition-all" placeholder="Midnight Obsidian" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Visual Context (Editorial Touch) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-8 lg:order-2">
+<div class="relative h-64 w-full rounded-lg overflow-hidden bg-primary/5">
+<img class="w-full h-full object-cover grayscale brightness-50" data-alt="architectural close-up of a modern luxury office building facade with glass and steel reflecting the blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI8C3_eGQYITvYp847vujsvn5n3gR4Cd-j4oM_ubpO4r89-lAIshcf8jYbt4dBSHW9h1aN8s-wnc_C5UxXpwZtR1NHwVCvMAGwVB5Pwec_AT1HQ6dUrdh4XD1khXgIFfChxuH-wB45YAE64-U8V6y9FSc66Gvzd9GtIb3Lgfz5EOB2lPwNXtiaMcedLtvJfTuQQ3QGRKHCWsrU8xHb9s6lpt96bPPSMGvmxQeeJRL38RWgXvHud8pvfdBXxktA4jNoHrTa7IRcxiI3"/>
+<div class="absolute inset-0 bg-primary/40"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="font-headline font-bold text-xl text-secondary">Asset Protection</p>
+<p class="text-[10px] uppercase tracking-widest opacity-80">Security Protocol Activated</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 lg:order-1 text-right lg:pr-8">
+<p class="font-body text-sm text-on-surface-variant italic leading-relaxed">
+                            "Great design is not just what it looks like and feels like. Design is how it works."
+                        </p>
+</div>
+</div>
+<!-- Form Actions -->
+<div class="pt-8 border-t border-outline-variant/20 flex flex-col sm:flex-row gap-6 justify-end items-center">
+<button class="order-2 sm:order-1 flex items-center gap-2 px-8 py-3 rounded border border-primary text-primary font-bold hover:bg-primary/5 transition-all text-sm uppercase tracking-widest" type="button">
+<span class="material-symbols-outlined text-lg">print</span>
+                        Print Receipt
+                    </button>
+<button class="order-1 sm:order-2 px-12 py-3 rounded bg-secondary text-primary font-bold shadow-md hover:shadow-lg hover:brightness-105 transition-all text-sm uppercase tracking-widest" type="submit">
+                        Register
+                    </button>
+</div>
+</form>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 glass-nav flex justify-around items-center py-4 px-6 z-50 border-t border-outline-variant/10">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold uppercase">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">app_registration</span>
+<span class="text-[10px] font-bold uppercase">Register</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-bold uppercase">Reports</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase">Profile</span>
+</button>
+</nav>
+</body></html>
