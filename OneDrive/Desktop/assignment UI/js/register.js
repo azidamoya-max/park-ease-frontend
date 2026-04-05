@@ -1,13 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  document.getElementById('vehicle-type').addEventListener('change', function() {
-    const ninSection = document.getElementById('nin-section');
-    if (this.value === 'Boda-boda') {
-      ninSection.style.display = 'block';
-    } else {
-      ninSection.style.display = 'none';
-    }
-  });
+  const vehicleType = document.getElementById('vehicle-type');
+if (vehicleType) {
+vehicleType.addEventListener('change', function() {
+const ninSection = document.getElementById('nin-section');
+if (ninSection) {
+if (this.value === 'Boda-boda') {
+ninSection.style.display = 'block';
+} else {
+ninSection.style.display = 'none';
+}
+}
+});
+}
 
   document.getElementById('registration-form').addEventListener('submit', function(e) {
     e.preventDefault();

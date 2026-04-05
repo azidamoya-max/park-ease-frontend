@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#1B4332",
+                    "accent": "#D4A017",
+                    "background": "#F8F9FA",
+                    "surface": "#FFFFFF",
+                    "on-surface": "#1A1C1B",
+                    "on-surface-variant": "#404944",
+                    "outline": "#D1D5DB",
+                    "secondary-container": "#E8F5E9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #F8F9FA;
+            color: #1A1C1B;
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen font-body">
+<aside class="fixed left-0 top-0 h-screen flex flex-col py-6 bg-primary h-full w-72 rounded-r-none border-r border-white/10 shadow-2xl z-50">
+<div class="px-8 mb-10">
+<h1 class="font-headline font-extrabold text-white text-2xl tracking-tight">ParkEase<br/><span class="text-accent">Meridian</span></h1>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 bg-accent text-primary rounded-lg px-6 py-3.5 mx-4 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-sm font-bold tracking-wide uppercase">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-white/70 px-6 py-3.5 mx-4 hover:bg-white/10 hover:text-white transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="app_registration">app_registration</span>
+<span class="font-label text-sm font-bold tracking-wide uppercase">Registration</span>
+</a>
+<a class="flex items-center gap-4 text-white/70 px-6 py-3.5 mx-4 hover:bg-white/10 hover:text-white transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label text-sm font-bold tracking-wide uppercase">Reports</span>
+</a>
+<div class="mt-auto">
+<a class="flex items-center gap-4 text-white/50 px-6 py-3.5 mx-4 hover:bg-white/10 hover:text-white transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label text-sm font-bold tracking-wide uppercase">Sign-out</span>
+</a>
+</div>
+</nav>
+</aside>
+<main class="ml-72 min-h-screen">
+<header class="flex justify-between items-center px-12 py-6 w-full bg-background/80 backdrop-blur-md top-0 sticky z-40 border-b border-outline/20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h2 class="font-headline tracking-tight font-bold text-xl text-primary uppercase">Management Console</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-accent rounded-full border-2 border-background"></span>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary overflow-hidden border-2 border-accent">
+<img alt="Executive Profile" data-alt="professional executive portrait of a man in a sharp suit with warm lighting in a high-end office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA7GzA0wGKHFlAyiySsixE46fqQN5crA9KfDIN2iEMqx3oAvAjzn96BFFdFH66xkfJ0d4qXvehYxRQtBJ31Ds74yNK2IqFg2eisscvbqy5_ACpUl6_Syne0gydTsKD8b3rCHMngRj10bTfhEylYKSY5uR4Z5XnQWgTJl4ldSFHMUOmNS5N3bfBCw_4K_NE_0U2FaJnCXZM3CZKdrI4eQz_VCqTp51wfT8EJyZPx7rFBb87fsgAUGa2BXAeinz6xK2P8RP1Ul2UAIbG"/>
+</div>
+</div>
+</header>
+<div class="p-12 space-y-12">
+<section>
+<div class="mb-8">
+<h3 class="font-headline text-3xl font-extrabold text-primary tracking-tight">Morning Overview</h3>
+<p class="font-body text-on-surface-variant text-lg">Real-time status of your premium parking estate.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface p-8 rounded-xl shadow-sm border border-outline/10 transition-shadow hover:shadow-md">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold">Total Vehicles Parked</span>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="font-headline text-5xl font-extrabold text-primary">142</span>
+<span class="font-body text-sm text-primary font-semibold">+12% vs yesterday</span>
+</div>
+<div class="mt-6 w-full h-1.5 bg-background rounded-full overflow-hidden">
+<div class="h-full bg-accent" style="width: 71%"></div>
+</div>
+</div>
+<div class="bg-primary p-8 rounded-xl shadow-lg transition-transform hover:scale-[1.01]">
+<span class="font-label text-xs uppercase tracking-widest text-white/70 font-bold">Today’s Revenue</span>
+<div class="mt-4">
+<span class="font-headline text-4xl font-extrabold text-white">2,500,000</span>
+<span class="font-body text-xl text-accent block mt-1 font-bold">UGX</span>
+</div>
+<div class="mt-6 flex justify-end">
+<span class="material-symbols-outlined text-accent text-4xl" data-icon="payments">payments</span>
+</div>
+</div>
+<div class="bg-surface p-8 rounded-xl shadow-sm border border-outline/10 transition-shadow hover:shadow-md">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold">Available Slots</span>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="font-headline text-5xl font-extrabold text-primary">58</span>
+<span class="font-body text-sm text-on-surface-variant">of 200 total</span>
+</div>
+<div class="mt-6 w-full h-1.5 bg-background rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 29%"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="lg:col-span-2 space-y-8">
+<div class="flex justify-between items-end">
+<h3 class="font-headline text-2xl font-bold text-primary">Recent Arrivals</h3>
+<button class="text-accent font-label text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors">View All Logs</button>
+</div>
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm border border-outline/10">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-background">
+<th class="px-8 py-5 font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Time</th>
+<th class="px-8 py-5 font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Plate Number</th>
+<th class="px-8 py-5 font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Vehicle Type</th>
+<th class="px-8 py-5 font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline/10">
+<tr class="hover:bg-background/50 transition-colors">
+<td class="px-8 py-6 font-body text-sm font-medium text-on-surface-variant">09:42 AM</td>
+<td class="px-8 py-6 font-headline font-bold text-primary tracking-tight">UBL 234G</td>
+<td class="px-8 py-6 font-body text-sm text-on-surface-variant">SUV Luxury</td>
+<td class="px-8 py-6 text-right">
+<span class="px-4 py-1.5 bg-secondary-container text-primary text-[10px] font-extrabold uppercase tracking-widest rounded-full border border-primary/10">Parked</span>
+</td>
+</tr>
+<tr class="hover:bg-background/50 transition-colors">
+<td class="px-8 py-6 font-body text-sm font-medium text-on-surface-variant">10:05 AM</td>
+<td class="px-8 py-6 font-headline font-bold text-primary tracking-tight">UBA 001X</td>
+<td class="px-8 py-6 font-body text-sm text-on-surface-variant">Executive Sedan</td>
+<td class="px-8 py-6 text-right">
+<span class="px-4 py-1.5 bg-accent/10 text-accent text-[10px] font-extrabold uppercase tracking-widest rounded-full border border-accent/20">Arriving</span>
+</td>
+</tr>
+<tr class="hover:bg-background/50 transition-colors">
+<td class="px-8 py-6 font-body text-sm font-medium text-on-surface-variant">10:12 AM</td>
+<td class="px-8 py-6 font-headline font-bold text-primary tracking-tight">UBG 555Z</td>
+<td class="px-8 py-6 font-body text-sm text-on-surface-variant">Sports Coupe</td>
+<td class="px-8 py-6 text-right">
+<span class="px-4 py-1.5 bg-secondary-container text-primary text-[10px] font-extrabold uppercase tracking-widest rounded-full border border-primary/10">Parked</span>
+</td>
+</tr>
+<tr class="hover:bg-background/50 transition-colors">
+<td class="px-8 py-6 font-body text-sm font-medium text-on-surface-variant">10:28 AM</td>
+<td class="px-8 py-6 font-headline font-bold text-primary tracking-tight">UBB 888A</td>
+<td class="px-8 py-6 font-body text-sm text-on-surface-variant">Compact Electric</td>
+<td class="px-8 py-6 text-right">
+<span class="px-4 py-1.5 bg-accent/10 text-accent text-[10px] font-extrabold uppercase tracking-widest rounded-full border border-accent/20">Arriving</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="space-y-8">
+<h3 class="font-headline text-2xl font-bold text-primary">Floor Status</h3>
+<div class="bg-surface rounded-xl p-6 relative overflow-hidden h-[400px] border border-outline/10 shadow-sm">
+<img class="absolute inset-0 w-full h-full object-cover opacity-10 grayscale mix-blend-multiply" data-alt="architectural bird-eye view of a modern luxury parking structure with minimalist design and dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk6GnOHJbuVDyqKjujutFBHEQQPPPLjZCdIhernW3F8Kc_RA_uO8QeQdt-42Optkdd_Bc0eCBall30bwBlNxllCYKFg53EeAvYhbMX2ce8yD0OhJ4e3EWTlAdmPHfrbS5vYubTW4BWTJu_yX8aacDnLq1s99SdB86NeW-vQkN9DFSMbYTGW3wLrjLKUiQ66EQnBMlPrLs5ls9XrkUxON5x5nEMd-CrPelFnU9trYfghdj8W6HhADCJ6vR13XYW1QU_xQyc0rH3SGrR"/>
+<div class="relative z-10 space-y-4">
+<div class="flex justify-between items-center p-5 bg-background/90 backdrop-blur-sm rounded-lg border border-outline/10">
+<span class="font-label text-xs font-extrabold uppercase text-primary tracking-wider">Level 01: VIP</span>
+<span class="font-headline font-black text-xl text-primary">92%</span>
+</div>
+<div class="flex justify-between items-center p-5 bg-background/90 backdrop-blur-sm rounded-lg border border-outline/10">
+<span class="font-label text-xs font-extrabold uppercase text-primary tracking-wider">Level 02: Premium</span>
+<span class="font-headline font-black text-xl text-primary">45%</span>
+</div>
+<div class="flex justify-between items-center p-5 bg-background/90 backdrop-blur-sm rounded-lg border border-outline/10">
+<span class="font-label text-xs font-extrabold uppercase text-primary tracking-wider">Level 03: Standard</span>
+<span class="font-headline font-black text-xl text-primary">12%</span>
+</div>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<button class="w-full bg-accent text-primary py-4 rounded-lg font-label text-xs font-extrabold uppercase tracking-widest shadow-xl hover:bg-primary hover:text-white transition-all">Manage Capacity</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<button class="fixed bottom-10 right-10 w-16 h-16 bg-accent text-primary rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add">add</span>
+</button>
+</body></html>
