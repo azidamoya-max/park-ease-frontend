@@ -68,18 +68,18 @@
 <p class="font-headline font-extrabold text-2xl text-white tracking-tight leading-tight">Welcome to the<br/>Architectural Concierge.</p>
 </div>
 </div>
-<!-- Login Form -->
-<form class="space-y-8">
+<div id="login-error" style="color:red; font-size:12px; margin-bottom:8px;"></div><!-- Login Form -->
+<form class="space-y-8" id="login-form">
 <div class="space-y-6">
 <!-- Username Input -->
 <div class="relative group">
 <label class="block font-label text-[10px] font-semibold tracking-widest text-on-surface-variant uppercase mb-1" for="username">Username</label>
-<input class="w-full bg-transparent border-0 border-b border-outline py-2 px-0 focus:ring-0 focus:border-primary transition-colors text-accent placeholder:text-on-surface-variant/40 font-body text-sm" id="username" name="username" placeholder="e.g. concierge@parkease.com" type="text"/>
+<input id = "username" class="w-full bg-transparent border-0 border-b border-outline py-2 px-0 focus:ring-0 focus:border-primary transition-colors text-accent placeholder:text-on-surface-variant/40 font-body text-sm" id="username" name="username" placeholder="e.g. concierge@parkease.com" type="text"/>
 </div>
 <!-- Password Input -->
 <div class="relative group">
 <label class="block font-label text-[10px] font-semibold tracking-widest text-on-surface-variant uppercase mb-1" for="password">Password</label>
-<input class="w-full bg-transparent border-0 border-b border-outline py-2 px-0 focus:ring-0 focus:border-primary transition-colors text-accent placeholder:text-on-surface-variant/40 font-body text-sm" id="password" name="password" placeholder="••••••••" type="password"/>
+<input id="password" class="w-full bg-transparent border-0 border-b border-outline py-2 px-0 focus:ring-0 focus:border-primary transition-colors text-accent placeholder:text-on-surface-variant/40 font-body text-sm" id="password" name="password" placeholder="••••••••" type="password"/>
 </div>
 </div>
 <div class="pt-4 flex flex-col items-center gap-6">
@@ -113,4 +113,5 @@
 <span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="help_outline">help_outline</span>
 </div>
 </footer>
+<script src="js/auth.js"></script>
 </body></html>

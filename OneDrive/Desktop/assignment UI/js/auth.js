@@ -16,3 +16,14 @@ function login(username, password) {
     document.getElementById('login-error').textContent = 'Invalid username or password';
   }
 }
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('login-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      login(username, password);
+    });
+  }
+});
