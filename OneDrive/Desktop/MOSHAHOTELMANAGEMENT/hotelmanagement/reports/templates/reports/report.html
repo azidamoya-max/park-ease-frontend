@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Reports{% endblock %}
+
+{% block content %}
+
+<div class="mb-4">
+    <h2 class="page-title">Reports & Statistics</h2>
+    <p style="color: #C6A75E;">Overview of hotel performance</p>
+</div>
+
+<!-- Stats Cards Row 1 -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <h6 style="color: #C6A75E;">Total Guests</h6>
+            <h2 class="page-title">{{ total_guests }}</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <h6 style="color: #C6A75E;">Total Rooms</h6>
+            <h2 class="page-title">{{ total_rooms }}</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <h6 style="color: #C6A75E;">Total Payments</h6>
+            <h2 class="page-title">{{ total_payments }}</h2>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Cards Row 2 -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <h6 style="color: #C6A75E;">Occupied Rooms</h6>
+            <h2 style="color: #dc3545; font-weight:700;">{{ occupied_rooms }}</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <h6 style="color: #C6A75E;">Available Rooms</h6>
+            <h2 style="color: #1F3A44; font-weight:700;">{{ not_occupied_rooms }}</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <h6 style="color: #C6A75E;">Total Revenue</h6>
+            <h2 style="color: #1F3A44; font-weight:700;">
+                UGX {{ total_revenue|floatformat:0 }}
+            </h2>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

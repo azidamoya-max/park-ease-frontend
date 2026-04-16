@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}Guest Directory{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="page-title">Guest Directory</h2>
+        <p style="color: #C6A75E;">Manage all registered hotel guests</p>
+    </div>
+    <a href="{% url 'guest_create' %}" class="btn btn-primary px-4 py-2">
+        + Register New Guest
+    </a>
+</div>
+
+<!-- Stats Card -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card p-3 text-center">
+            <h6 style="color: #C6A75E;">Total Guests</h6>
+            <h2 class="page-title">{{ guests|length }}</h2>
+        </div>
+    </div>
+</div>
+
+<!-- Guest Table -->
+<div class="card">
+    <div class="card-body">
+        <table class="table table-hover table-bordered align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                    <th>Email Address</th>
+                    <th>Date Registered</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for guest in guests %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ guest.first_name }}</td>
+                    <td>{{ guest.last_name }}</td>
+                    <td>{{ guest.phone_number }}</td>
+                    <td>{{ guest.email_address }}</td>
+                    <td>{{ guest.date_registered }}</td>
+                    <td>
+                        <a href="{% url 'guest_update' guest.pk %}" 
+                           class="btn btn-sm" 
+                           style="background-color:#C6A75E; color:white;">
+                            Edit
+                        </a>
+                        <a href="{% url 'guest_delete' guest.pk %}" 
+                           class="btn btn-sm btn-danger">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7" class="text-center" style="color:#C6A75E;">
+                        No guests registered yet.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

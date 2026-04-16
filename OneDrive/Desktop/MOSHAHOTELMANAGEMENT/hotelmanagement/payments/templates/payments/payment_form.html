@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}Record Payment{% endblock %}
+
+{% block content %}
+
+<div class="mb-4">
+    <h2 class="page-title">Record New Payment</h2>
+    <p style="color: #C6A75E;">Fill in the details to record a payment</p>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header text-white" style="background-color: #1F3A44;">
+                <h5 class="mb-0">➕ New Payment</h5>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" style="color: #1F3A44;">Guest</label>
+                        {{ form.guest }}
+                        {% if form.guest.errors %}
+                            {% for error in form.guest.errors %}
+                                <div class="text-danger small mt-1">⚠️ {{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" style="color: #1F3A44;">Room</label>
+                        {{ form.room }}
+                        {% if form.room.errors %}
+                            {% for error in form.room.errors %}
+                                <div class="text-danger small mt-1">⚠️ {{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" style="color: #1F3A44;">Amount (UGX)</label>
+                        {{ form.amount }}
+                        {% if form.amount.errors %}
+                            {% for error in form.amount.errors %}
+                                <div class="text-danger small mt-1">⚠️ {{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" style="color: #1F3A44;">Payment Type</label>
+                        {{ form.payment_type }}
+                        {% if form.payment_type.errors %}
+                            {% for error in form.payment_type.errors %}
+                                <div class="text-danger small mt-1">⚠️ {{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold" style="color: #1F3A44;">Payment Date</label>
+                        {{ form.payment_date }}
+                        {% if form.payment_date.errors %}
+                            {% for error in form.payment_date.errors %}
+                                <div class="text-danger small mt-1">⚠️ {{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary px-4">
+                            Record Payment
+                        </button>
+                        <a href="{% url 'payment_list' %}" class="btn px-4"
+                           style="background-color: #C6A75E; color: white;">
+                            Cancel
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

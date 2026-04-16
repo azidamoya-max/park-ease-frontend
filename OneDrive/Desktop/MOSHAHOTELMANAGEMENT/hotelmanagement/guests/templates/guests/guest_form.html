@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if form.instance.pk %}Edit Guest{% else %}Register Guest{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<div class="mb-4">
+    <h2 class="page-title">
+        {% if form.instance.pk %}Edit Guest{% else %}New Guest Registration{% endif %}
+    </h2>
+    <p style="color: #C6A75E;">
+        {% if form.instance.pk %}Update guest details below{% else %}Fill in the details to register a new guest{% endif %}
+    </p>
+</div>
+
+<!-- Form Card -->
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card">
+            <div class="card-header text-white" style="background-color: #1F3A44;">
+                <h5 class="mb-0">
+                    {% if form.instance.pk %}✏️ Edit Guest{% else %}➕ Register New Guest{% endif %}
+                </h5>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <!-- First Name -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" style="color: #1F3A44;">First Name</label>
+                        {{ form.first_name }}
+                        {% if form.first_name.errors %}
+                            {% for error in form.first_name.errors %}
+                                <div class="text-danger small mt-1">⚠️ {{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" style="color: #1F3A44;">Last Name</label>
+                        {{ form.last_name }}
+                        {% if form.last_name.errors %}
+                            {% for error in form.last_name.errors %}
+                                <div class="text-danger small mt-1">⚠️ {{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" style="color: #1F3A44;">Phone Number</label>
+                        {{ form.phone_number }}
+                        {% if form.phone_number.errors %}
+                            {% for error in form.phone_number.errors %}
+                                <div class="text-danger small mt-1">⚠️ {{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" style="color: #1F3A44;">Email Address</label>
+                        {{ form.email_address }}
+                        {% if form.email_address.errors %}
+                            {% for error in form.email_address.errors %}
+                                <div class="text-danger small mt-1">⚠️ {{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <!-- Date Registered -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold" style="color: #1F3A44;">Date Registered</label>
+                        {{ form.date_registered }}
+                        {% if form.date_registered.errors %}
+                            {% for error in form.date_registered.errors %}
+                                <div class="text-danger small mt-1">⚠️ {{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary px-4">
+                            {% if form.instance.pk %}Save Changes{% else %}Register Guest{% endif %}
+                        </button>
+                        <a href="{% url 'guest_list' %}" class="btn" 
+                           style="background-color: #C6A75E; color: white;">
+                            Cancel
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
